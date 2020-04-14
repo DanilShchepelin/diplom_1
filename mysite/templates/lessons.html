@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Уроки</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+	<div class="wrapper">
+		<header id="header" class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-1 col-lg-1 col-md-2 col-sm-3 mx-auto d-block col-3">
+						<a href="{% url 'main' %}">
+							<img src="{% static 'img/fuji.svg' %}" alt="">
+						</a>
+					</div>
+					<div class="col-xl-6 col-lg-7 col-md-7 col-sm-12 ml-auto">
+						<nav>
+							<ul class="menu d-flex justify-content-center">
+								<li class="menu__item">
+									<a href="{% url 'lessons' %}">
+										Уроки
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="">
+										Тесты
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="">
+										Изображения
+									</a>
+								</li>
+								{% if user.is_authenticated %}
+									<li class="menu_item">{{ user.get_username }}</li>
+									<li class="menu_item"><a href="{% url 'logout'%}?next={{request.path}}">Выход</a></li>
+								{% else %}
+									<li class="menu_item"><a href="{% url 'login'%}?next={{request.path}}">Вход</a></li>
+								{% endif %}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="lessons">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="lessons__text">
+							<a href="{% url 'lesson_1' %}">Урок 1 История</a>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="lessons__text">
+							<a href="{% url 'lesson_2' %}">Урок 2 История</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer__lessons">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3">
+						г.Тюмень 2020
+					</div>
+					<div class="col-xl-3 ml-auto footer__item">
+						Щепелин Данил
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

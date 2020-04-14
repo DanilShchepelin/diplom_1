@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <div class="row justify-content-center">
+      <div class="col">
+        <a href="{% url 'post_new' %}" style="">Добавить изображение</a>
+      </div>
+    </div>
+  {% endif %}
+  {% for picture in pictures %}
+    <div class="row justify-content-center">
+      <div class="post col-md-6" style="margin-top: 50px; border-bottom: 1px solid #808080">
+        <div class="date">
+          <p>Опубликовано: {{ picture.published_date }}</p>
+          <p>{{ picture.user }}</p>
+        </div>
+        <div class="image" style="margin-bottom: 25px">
+          <img class="" src="{{ picture.img.url }}" alt="" style="width: 550px">
+        </div>
+        <form action="{% url 'post_like' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="post_id" value="{{ picture.id }}">
+          {% if user not in picture.liked.all %}
+            <button type="submit">Нравится</button>
+          {% else %}
+            <button type="submit">Ненравится</button>
+          {% endif %}
+        </form>
+        <strong>Нравится: {{ picture.liked.all.count }}</strong>
+        <p>{{ picture.title }}</p>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

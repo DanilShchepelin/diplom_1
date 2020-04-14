@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Урок 2</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+	<div class="wrapper">
+		<header id="header" class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-1 col-lg-1 col-md-2 col-sm-3 mx-auto d-block col-3">
+						<a href="{% url 'main' %}">
+							<img src="{% static 'img/fuji.svg' %}" alt="">
+						</a>
+					</div>
+					<div class="col-xl-6 col-lg-7 col-md-7 col-sm-12 ml-auto">
+						<nav>
+							<ul class="menu d-flex justify-content-center">
+								<li class="menu__item">
+									<a href="{% url 'lessons' %}">
+										Уроки
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="">
+										Тесты
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="">
+										Изображения
+									</a>
+								</li>
+								{% if user.is_authenticated %}
+									<li class="menu_item">{{ user.get_username }}</li>
+									<li class="menu_item"><a href="{% url 'logout'%}?next={{request.path}}">Выход</a></li>
+								{% else %}
+									<li class="menu_item"><a href="{% url 'login'%}?next={{request.path}}">Вход</a></li>
+								{% endif %}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="lessons">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h1 class="name__lesson">
+							Урок 2 Предметы росписи и живописи
+						</h1>
+						<img src="{% static 'img/lesson_2_1.png' %}" alt="" class="img-fluid">
+
+						<h2 class="name__lesson">
+							Предметы росписи
+						</h2>
+						<div>
+							Японские художники использовали различные места и способы для изображения композиции, в отличие от традиционных западных рамок, обрамляющих холст. Среди мест для нанесения рисунка были:
+							<br>
+							<br>
+							-горизонтальные свитки (эмакимоно);
+							<br>
+							-вертикальные свитки (какэмоно);
+							<br>
+							-ширмы (бёбу);
+							<br>
+							-раздвижные двери (фусума);
+							<br>
+							-и другие.
+						</div>
+						
+						<img src="{% static 'img/lesson_2_2.jpg' %}" alt="" class="img-fluid">
+
+						<h2 class="name__lesson">
+							Предметы живописи
+						</h2>
+						<div>
+							Японские картины, зачастую, связаны с ландшафтами и природными сценами, созданными с помощью нескольких гениальных мазков. В зависимости от среды и средства изображения существовало немало специфичных жанров, например:
+							<br>
+							<br>
+							-пейзажи четырех сезонов;
+							<br>
+							-сцены из жизни императора;
+							<br>
+							-изображение западных стран;
+							<br>
+							-пейзажи из Киото.
+						</div>
+
+						<h2 class="name__lesson">
+							Предметы живописи
+						</h2>
+						<div>
+							Кано Масанобу (1453-1490), вместе с сыном Мотонобу основали школу изобразительных искусств Кано, которая отличалась протестантскими взглядами на технику китайской живописи черной тушью. Школа Кано использовала яркие цвета и смелые композиции.
+							<br>
+							<br>
+							Шижо (Shijo) – школа, отсоединившаяся от Кано. Характерные работы изображали предметы, взятые из повседневной жизни. Своего рода реализм включал в себя также сатирические элементы.
+							<br>
+							<br>
+							Тоса-ха — школа живописи, специализирующаяся на формате небольших миниатюр в книжных иллюстрациях. Стиль тоса стал чем-то вроде официального направления живописи императорского дворца в Киото.
+							<br>
+							<br>
+							Нанга – жанр живописи, популярный в начале 19-го века. Сторонники этого направления изображали идеализированные ландшафты и природные объекты, такие как птицы, цветы и так далее. Стиль был навеян китайской живописью.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3">
+						г.Тюмень 2020
+					</div>
+					<div class="col-xl-3 ml-auto footer__item">
+						Щепелин Данил
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
