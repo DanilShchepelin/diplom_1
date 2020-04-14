@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id_user', models.AutoField(primary_key=True, serialize=False)),
                 ('FIO', models.CharField(max_length=100, verbose_name='ФИО')),
-                ('login', models.CharField(max_length=50, verbose_name='Логин')),
+                ('registration', models.CharField(max_length=50, verbose_name='Логин')),
                 ('password', models.CharField(max_length=100, verbose_name='Пароль')),
                 ('user_img', models.ImageField(upload_to='users/', verbose_name='Изображение')),
             ],

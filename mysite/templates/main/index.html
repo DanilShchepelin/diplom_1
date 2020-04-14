@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Обучение японской росписи</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+	<header id="header" class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-1 col-lg-1 col-md-2 col-sm-3 mx-auto d-block col-3">
+					<a href="">
+						<img src="{% static 'img/fuji.svg' %}" alt="">
+					</a>
+				</div>
+				<div class="col-xl-6 col-lg-7 col-md-7 col-sm-12 ml-auto">
+					<nav>
+						<ul class="menu d-flex justify-content-center">
+							<li class="menu__item">
+								<a href="{% url 'lessons_list' %}">
+									Уроки
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="">
+									Тесты
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="{% url 'post_list' %}">
+									Изображения
+								</a>
+							</li>
+							{% if user.is_authenticated %}
+								<li class="menu_item">{{ user.get_username }}</li>
+								<li class="menu_item"><a href="{% url 'logout'%}?next={{request.path}}">Выход</a></li>
+							{% else %}
+								<li class="menu_item"><a href="{% url 'login'%}?next={{request.path}}">Вход</a></li>
+							{% endif %}
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1 class="first__text">
+						У нас вы узнаете все о японской росписи
+					</h1>
+				</div>			
+			</div>
+			<div class="row images">
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 items__img">
+					<img src="{% static 'img/img1.jpg' %}" alt="" class="img-fluid">
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 items__img">
+					<img src="{% static 'img/img2.jpg' %}" alt="" class="img-fluid">
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 items__img">
+					<img src="{% static 'img/img3.jpg' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col main__text">
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="review">
+		<form method="post" action="{% url 'add_review' %}">
+			{% csrf_token %}
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-4 review__name">
+						<div>
+							Ваше имя
+						</div>
+						<input type="text" id="name" name="name">
+					</div>	
+				</div>
+				<div class="row">
+					<div class="col-xl-6">
+						<div>
+							Ваш отзыв
+						</div>
+						<textarea name="reviews" id="reviews" cols="60" rows="5"></textarea>
+					</div>
+				</div>
+				<input type="submit" value="Отправить">
+			</div>
+		</form>
+	</section>
+	<section class="review__items">
+			<div class="container">
+				{% for review in reviews %}
+				<div class="row">
+					<div class="col-xl-3 review__item__name">
+						<div>
+							{{ review.name }}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-6 review__item__text">
+						<div>
+							{{ review.reviews }}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+	</section>
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-3">
+					г.Тюмень 2020
+				</div>
+				<div class="col-xl-3 ml-auto footer__item">
+					Щепелин Данил
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

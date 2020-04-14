@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col" style="margin-top: 25px">
+      <form action="{% url 'lessons_search' %}" method="get">
+        <input type="text" placeholder="Поиск..." name="q">
+        <button type="submit">
+          <span>Поиск</span>
+        </button>
+      </form>
+    </div>
+  </div>
+  {% for lesson in lessons %}
+    <div class="row">
+      <div class="lesson col-md-6" style="margin-top: 25px">
+        <div class="date">
+          <p>Опубликовано: {{ lesson.published_date }}</p>
+          <a href="{% url 'lessons_detail' pk=lesson.pk %}">{{ lesson.title }}</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}

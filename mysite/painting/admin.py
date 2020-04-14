@@ -1,7 +1,13 @@
 from django.contrib import admin
-from .models import Users, Reviews, Images
+from .models import Reviews, Pictures, Lessons, Like
 
-admin.site.register(Users)
+"""
+class ReviewsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'reviews')
+    search_fields = ('name', 'reviews')
+"""
+
 admin.site.register(Reviews)
-admin.site.register(Images)
-
+admin.site.register(Pictures)
+admin.site.register(Lessons)
+admin.site.register(Like)
