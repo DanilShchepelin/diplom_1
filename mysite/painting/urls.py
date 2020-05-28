@@ -15,4 +15,5 @@ urlpatterns = [
     path('lessons/', views.lessons_list, name='lessons_list'),
     path('lessons/<int:pk>/', views.lessons_detail, name='lessons_detail'),
     path('search/', views.Search.as_view(), name='lessons_search'),
+    path('test/', views.test, name='test'),
 ]

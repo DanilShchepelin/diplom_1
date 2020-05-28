@@ -10,21 +10,21 @@
   {% endif %}
   {% for picture in pictures %}
     <div class="row justify-content-center">
-      <div class="post col-md-6" style="margin-top: 50px; border-bottom: 1px solid #808080">
+      <div class="post col-xl-6 col-lg-8 col-md-10 col-sm-12 col-12" style="margin-top: 50px; border-bottom: 1px solid #808080">
         <div class="date">
           <p>Опубликовано: {{ picture.published_date }}</p>
           <p>{{ picture.user }}</p>
         </div>
-        <div class="image" style="margin-bottom: 25px">
-          <img class="" src="{{ picture.img.url }}" alt="" style="width: 550px">
+        <div class="" style="margin-bottom: 25px">
+          <img class="post__image" src="{{ picture.img.url }}" alt="">
         </div>
         <form action="{% url 'post_like' %}" method="POST">
           {% csrf_token %}
           <input type="hidden" name="post_id" value="{{ picture.id }}">
           {% if user not in picture.liked.all %}
-            <button type="submit">Нравится</button>
+            <button type="submit" class="form__btn">Нравится</button>
           {% else %}
-            <button type="submit">Ненравится</button>
+            <button type="submit" class="form__btn">Не нравится</button>
           {% endif %}
         </form>
         <strong>Нравится: {{ picture.liked.all.count }}</strong>

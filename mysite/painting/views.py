@@ -92,7 +92,7 @@ def like_post(request):
             post_obj.liked.remove(user)
         else:
             post_obj.liked.add(user)
-
+        """
         like, created = Like.objects.get_or_create(user, post_id=post_id)
 
         if not created:
@@ -100,6 +100,11 @@ def like_post(request):
                 like.value = 'Unlike'
             else:
                 like.value = 'Like'
+        """
+        post_obj.save()
+    #return redirect('post_list')
+    return HttpResponseRedirect('/pictures')
 
-        like.save()
-    return redirect('post_list')
+
+def test(request):
+    return render(request, 'test/test.html', {})

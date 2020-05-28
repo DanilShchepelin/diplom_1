@@ -8,9 +8,9 @@
             </div>
         {% endif %}
         <h1>{{ lesson.title }}</h1>
-        <p>{{ lesson.info|linebreaksbr }}</p>
-        <div class="image" style="margin-bottom: 25px">
-          <img class="" src="{{ lesson.image.url }}" alt="" style="width: 550px">
+        <p class="lesson__text">{{ lesson.info|linebreaksbr }}</p>
+        <div class="" style="margin-bottom: 25px">
+          <img class="lesson__logo" src="{{ lesson.image.url }}" alt="">
         </div>
     </div>
 {% endblock %}

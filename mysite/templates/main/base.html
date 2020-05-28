@@ -3,10 +3,12 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Обучение японской росписи</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'style/style.css' %}">
+	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
 	<header id="header" class="header">
@@ -14,32 +16,52 @@
 			<div class="row" style="margin-bottom: 25px">
 				<div class="col-xl-1 col-lg-1 col-md-2 col-sm-3 mx-auto d-block col-3">
 					<a href="/">
-						<img src="{% static 'img/fuji.svg' %}" alt="">
+						<img src="{% static 'img/fuji.svg' %}" alt="" class="fadeInLeft Logo">
 					</a>
 				</div>
 				<div class="col-xl-6 col-lg-7 col-md-7 col-sm-12 ml-auto">
 					<nav>
-						<ul class="menu d-flex justify-content-center">
-							<li class="menu__item">
-								<a href="{% url 'lessons_list' %}">
-									Уроки
-								</a>
-							</li>
-							<li class="menu__item">
-								<a href="">
-									Тесты
-								</a>
-							</li>
+						<ul class="menu">
+							{% if user.is_authenticated %}
+								<li class="menu__item">
+									<a href="{% url 'lessons_list' %}">
+										Уроки
+									</a>
+								</li>
+							{% else %}
+								<li class="menu__item">
+									<a href="{% url 'login'%}?next={{request.path}}">
+										Уроки
+									</a>
+								</li>
+							{% endif %}
+							{% if user.is_authenticated %}
+								<li class="menu__item">
+									<a href="{% url 'test' %}">
+										Тесты
+									</a>
+								</li>
+							{% else %}
+								<li class="menu__item">
+									<a href="{% url 'login'%}?next={{request.path}}">
+										Уроки
+									</a>
+								</li>
+							{% endif %}
 							<li class="menu__item">
 								<a href="{% url 'post_list' %}">
 									Изображения
 								</a>
 							</li>
 							{% if user.is_authenticated %}
-								<li class="menu_item">{{ user.get_username }}</li>
-								<li class="menu_item"><a href="{% url 'logout'%}?next={{request.path}}">Выход</a></li>
+								<li class="menu_item">
+									<span style="color: #000; font-weight: 700">
+										{{ user.get_username }}
+										<a href="{% url 'logout'%}?next={{request.path}}" style="color: #000; font-weight: 700">Выход</a>
+									</span>
+								</li>
 							{% else %}
-								<li class="menu_item"><a href="{% url 'login'%}?next={{request.path}}">Вход</a></li>
+								<li class="menu__item"><a href="{% url 'login'%}?next={{request.path}}">Вход</a></li>
 							{% endif %}
 						</ul>
 					</nav>
