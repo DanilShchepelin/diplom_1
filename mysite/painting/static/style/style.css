@@ -31,6 +31,8 @@ a:hover {
 }
 
 .menu {
+    display: flex;
+    justify-content: center;
 	margin-top: 10px;
 }
 
@@ -59,6 +61,12 @@ a:hover {
 	margin-bottom: 50px;
 }
 
+.review__item{
+    border: 1px solid #808080;
+    border-radius: 2px;
+    margin-bottom: 50px;
+}
+
 .review__name {
 	margin-bottom: 20px;
 }
@@ -69,10 +77,13 @@ a:hover {
 
 .review__item__name {
 	margin-bottom: 20px;
+	margin-top: 10px;
+	padding-left: 40px;
 }
 
 .review__item__text {
-	margin-bottom: 50px;
+	margin-bottom: 10px;
+	padding-left: 40px;
 }
 
 .footer {
@@ -103,10 +114,87 @@ a:hover {
 	margin-top: 100px;
 }
 
-.post {
-
+.post__image {
+    width: 550px;
 }
 
 .image {
 	margin-bottom: 50px;
 }
+
+.form__btn {
+	background: #fff;
+	color: #000;
+	border-color: #000;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 400;
+	border-radius: 3px;
+	border: 1px solid;
+	cursor: pointer;
+	outline: none;
+}
+
+.lesson__logo {
+    width: 550px;
+}
+
+@media screen and (max-width: 1024px) {
+    .post__image {
+        width: 600px;
+    }
+
+    .review {
+        margin-left: 25px;
+    }
+
+    .review__items {
+        margin-left: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .post__image {
+        width: 550px;
+    }
+
+    .menu {
+        display: block;
+        text-align: right;
+    }
+
+    .menu__item {
+        margin-bottom: 15px;
+        margin-right: 0
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .post__image {
+        width: 400px;
+    }
+
+    .text__rev {
+        width: 300px;
+    }
+
+    .lesson__logo {
+        width: 320px;
+    }
+
+    .lesson__text {
+        font-size: 30px;
+    }
+
+    .menu {
+        display: block;
+        text-align: center;
+    }
+
+    .menu__item {
+        margin-bottom: 15px;
+        margin-left: 0
+    }
+}
+
+

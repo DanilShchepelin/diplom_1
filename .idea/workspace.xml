@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e35417c7-def1-49df-89d1-dd85f5ebd3c9" name="Default Changelist" comment="">
+    <list default="true" id="e35417c7-def1-49df-89d1-dd85f5ebd3c9" name="Default Changelist" comment="update">
       <change afterPath="$PROJECT_DIR$/mysite/painting/static/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/templates/test/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/mysite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/painting/static/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/painting/static/style/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/painting/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/painting/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/painting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/painting/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/lessons/lessons_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/lessons/lessons_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/lessons/lessons_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/lessons/lessons_search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/main/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/main/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/main/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/main/post_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586863684889</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1590698784228</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590698784228</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -89,18 +87,18 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="559" y="239" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1590684431711" />
-    <state x="454" y="0" key="CommitChangelistDialog2" timestamp="1586863681997">
+    <state x="454" y="0" key="CommitChangelistDialog2" timestamp="1590698825343">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="454" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1586863681997" />
+    <state x="454" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1590698825343" />
     <state x="617" y="217" key="FileChooserDialogImpl" timestamp="1586868593506">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="617" y="217" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1586868593506" />
-    <state x="670" y="322" key="Github.ShareDialog" timestamp="1590696487029">
+    <state x="670" y="322" key="Github.ShareDialog" timestamp="1590698922873">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="670" y="322" key="Github.ShareDialog/0.0.1600.860@0.0.1600.860" timestamp="1590696487029" />
+    <state x="670" y="322" key="Github.ShareDialog/0.0.1600.860@0.0.1600.860" timestamp="1590698922873" />
     <state x="384" y="122" key="SettingsEditor" timestamp="1586696487975">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -109,10 +107,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="162" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1586863797811" />
-    <state x="609" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586863529344">
+    <state x="609" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590698973239">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="609" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1586863529344" />
+    <state x="609" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1590698973239" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1583054488405">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
